@@ -25,7 +25,17 @@ namespace Final_Project_Build_Demo
 
         public void Accelerate(int speedToAccelerate)
         {
-            _speed += speedToAccelerate;
+            if(speedToAccelerate >= 0)
+            {
+                _speed += speedToAccelerate;
+
+            }
+            else
+            {
+                // throw an exception
+                throw new BoatException();
+
+            }
         }
 
         public override string ToString()

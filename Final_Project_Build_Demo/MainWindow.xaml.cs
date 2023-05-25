@@ -24,16 +24,27 @@ namespace Final_Project_Build_Demo
         public MainWindow()
         {
             InitializeComponent();
-
-            rtbDisplay.Text = "";
-
             Boat boat = new Boat("SSLetzSea");
+            try
+            {
+                rtbDisplay.Text = "";
 
-            DisplayTextLine(boat.ToString());
+           
+                DisplayTextLine(boat.ToString());
 
-            boat.Accelerate(-15);
+                boat.Accelerate(-15);
 
-            DisplayTextLine(boat.ToString());
+                DisplayTextLine(boat.ToString());
+            }
+            catch (BoatException bx)
+            {
+                MessageBox.Show(bx.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
+
 
 
 
